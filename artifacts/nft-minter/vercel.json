@@ -1,0 +1,9 @@
+{
+  "framework": "vite",
+  "buildCommand": "pnpm --filter @workspace/nft-minter run build",
+  "outputDirectory": "artifacts/nft-minter/dist/public",
+  "installCommand": "pnpm install",
+  "env": {
+    "VITE_CONTRACT_ADDRESS": "0xcC6A1F0545b3a21D2AB1A51572D760537fe6BEc5"
+  }
+}

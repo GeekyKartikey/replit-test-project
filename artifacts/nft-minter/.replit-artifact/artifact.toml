@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Monad NFT Minter"
+version = "1.0.0"
+id = "artifacts/nft-minter"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18679
+
+[services.development]
+run = "pnpm --filter @workspace/nft-minter run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nft-minter", "run", "build" ]
+publicDir = "artifacts/nft-minter/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18679"
+BASE_PATH = "/"
